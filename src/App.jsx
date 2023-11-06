@@ -11,17 +11,19 @@ function App() {
     },
     {
       task: "fodre katten",
-      completed: false,
+      completed: true,
       id: 2,
     },
   ]);
+
   function addItem(newItem) {
-    setItems((oldState) => oldState.concat);
+    setItems((oldState) => oldState.concat(newItem));
   }
+
   return (
     <main className="bg-blue-100 h-screen p-48">
-      <Form className="flex"></Form>
-      <List></List>
+      <Form addItem={addItem} className="flex"></Form>
+      <List items={items}></List>
     </main>
   );
 }
